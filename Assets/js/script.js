@@ -7,7 +7,7 @@
     }else {
         var cityName = $(this).text();
     }
-     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+cityName+"&ctn=5&appid=e17b00c614d03406b9f9fd051281337c";
+     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&ctn=5&appid=e17b00c614d03406b9f9fd051281337c";
      $.ajax({
          url: queryURL,
          method: "GET"
@@ -15,7 +15,7 @@
          var newCity = $("<div>");
          newCity.append($("<h3>" + response.name + "</h3>"));
          newCity.append($("<p>" + moment().format("MMM Do YYYY") + "</p>"));
-         newCity.append($("<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png'>"));
+         newCity.append($("<img src='https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png'>"));
          var tempF = Math.ceil((response.main.temp - 273.15) * 9/5 + 32);
          newCity.append($("<p> Temperature (F): " + tempF + "</p>"));
          newCity.append($("<p> Humidity: " + response.main.humidity + "</p>"));
